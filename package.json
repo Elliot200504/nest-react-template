@@ -7,10 +7,10 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "pnpm --parallel --filter \"./apps/*\" dev",
-    "dev:api": "pnpm --filter api start:dev",
-    "dev:web": "pnpm --filter web dev",
-    "build": "pnpm --filter api build && pnpm --filter web build",
+    "dev": "pnpm --filter shared build && pnpm --parallel --filter \"./apps/*\" dev",
+    "dev:api": "pnpm --filter shared build && pnpm --filter api start:dev",
+    "dev:web": "pnpm --filter shared build && pnpm --filter web dev",
+    "build": "pnpm --filter shared build && pnpm --filter api build && pnpm --filter web build",
     "lint": "pnpm -r lint",
     "test": "pnpm -r test"
   }

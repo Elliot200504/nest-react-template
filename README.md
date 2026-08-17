@@ -25,4 +25,4 @@ pnpm dev:web
 
 ## sharing code between them
 
-Not set up yet. If you need it later: add a `packages/shared` folder, list it in `pnpm-workspace.yaml`, then pull it into either app as a normal workspace dependency.
+`packages/shared` is a small workspace package both apps depend on (`shared: workspace:*`). It needs building before it's usable, which `pnpm dev`/`pnpm build` already do for you (`pnpm --filter shared build`).
